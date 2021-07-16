@@ -14,9 +14,4 @@ public class PostController {
     public PostController(PostService postService) {
         this.postService = postService;
     }
-
-    @GetMapping("/{userId}")
-    public List<Posts> getAllPostById(@PathVariable int userId) {
-        return postService.findAllByUserId(userId);
-    }
 }
