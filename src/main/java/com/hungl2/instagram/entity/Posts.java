@@ -21,9 +21,14 @@ public class Posts {
     private ZonedDateTime createdAt;
     @Column(name = "updated_at")
     private ZonedDateTime updatedAt;
+    @Column(name = "url", nullable = false)
     private String url;
+    @Column(name = "caption")
     private String caption;
+    @Column(name = "lat")
     private BigDecimal lat;
+    @Column(name = "lng")
     private BigDecimal lng;
+    @Column(name = "user_id", nullable = false)
     private int userId;
 }
