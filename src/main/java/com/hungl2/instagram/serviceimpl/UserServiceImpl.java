@@ -14,9 +14,4 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
-
-    @Override
-    public List<Users> getAllUsers() {
-        return usersRepository.findAll();
-    }
 }
