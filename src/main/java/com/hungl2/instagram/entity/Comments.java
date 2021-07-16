@@ -22,12 +22,12 @@ public class Comments {
     private ZonedDateTime createdAt;
     @Column(name = "updated_at")
     private ZonedDateTime updatedAt;
-    @Column(name = "contents")
+    @Column(name = "contents", nullable = false)
     private String contents;
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private Users users;
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "post_id")
+    @JoinColumn(name = "post_id", nullable = false)
     private Posts posts;
 }
