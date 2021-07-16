@@ -17,9 +17,9 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "created_at")
-    private ZonedDateTime created_at;
+    private ZonedDateTime createdAt;
     @Column(name = "updated_at")
-    private ZonedDateTime updated_at;
+    private ZonedDateTime updatedAt;
     @Column(name = "username", nullable = false)
     private String username;
     @Column(name = "bio")
