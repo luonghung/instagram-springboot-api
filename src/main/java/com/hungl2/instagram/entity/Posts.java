@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Builder
 @Getter
@@ -31,4 +32,11 @@ public class Posts {
     private BigDecimal lng;
     @Column(name = "user_id", nullable = false)
     private int userId;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(
+            name = "hashtags_posts",
+            joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "hashtag_id")
+    )
+    private List<HashTags> hashTagsList;
 }
