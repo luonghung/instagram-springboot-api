@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Builder
 @Getter
@@ -34,4 +35,7 @@ public class Users {
     private String password;
     @Column(name = "status")
     private String status;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private List<Posts> postsList;
 }
